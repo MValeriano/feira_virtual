@@ -1,0 +1,48 @@
+:root {
+    --primary: #8A2BE2;
+    --primary-light: #9b45f0;
+    --secondary: #FF4081;
+    --dark: #2D2B35;
+    --light: #F8F9FA;
+    --gray: #6c757d;
+    --success: #28a745;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background-color: rgb(255,153,51);
+    height: 8vh;
+    position: sticky;
+    top: 0;
+}
+
+main #vitrine{
+    /*background: linear-gradient(rgba(141, 43, 226, 0.05), rgba(255, 64, 129, 0.05));*/
+	background-image: url('../images/banner.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+    height: 92vh;
+	opacity: 0.2;
+}
+
+main #produtos{
+    background-color: var(--light);
+    min-height: 100vh;
+}
+
+main #cadastro{
+    background-color: #fff;
+    height: 100vh;
+}
+
+footer{
+    background-color: var(--dark);
+    height: 45vh;
+}
