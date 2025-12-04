@@ -1,0 +1,57 @@
+:root {
+    --primary: #8A2BE2;
+    --primary-light: #9b45f0;
+    --secondary: #FF4081;
+    --dark: #2D2B35;
+    --light: #F8F9FA;
+    --gray: #6c757d;
+    --success: #28a745;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#card-produto{
+    border: 2px solid white;
+    margin-bottom: 10px;
+}
+
+body{
+    color: var(--light);
+    font-family: 'roboto', sans-serif;
+}
+
+header{
+    background-color: var(--primary);
+    height: 10vh;
+    position: sticky;
+    top: 0;
+}
+
+main #vitrine{
+    background-color: rgb(128,255,31);
+    height: 90vh;
+}
+
+main #produtos{
+    background-color: rgb(31,128,255);
+    min-height: 100vh;
+}
+
+main #cadastro{
+    background-color: rgb(22,18,112);
+    height: 100vh;
+}
+
+footer{
+    background-color: rgb(255,12,35);
+    height: 40vh;
+}
+
+#grid-produtos{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    gap: 30px;
+}

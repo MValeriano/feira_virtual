@@ -1,33 +1,35 @@
 const API = "http://127.0.0.1:8080/usuario";
-//UsuarioController
-//UsuarioController
 
 // Carregar usuários ao iniciar
 document.addEventListener("DOMContentLoaded", carregarUsuarios);
 
-function carregarUsuarios() {
-    fetch(API)
-        .then(res => res.json())
-        .then(usuarios => {
-            const tabela = document.querySelector("#usuariosTabela");
-            tabela.innerHTML = "";
+function retornaDados(dados){
+    return dados.json();
+}
 
-            usuarios.forEach(u => {
-                tabela.innerHTML += `
-                    <tr>
-                        <td>${u.id}</td>
-                        <td>${u.nome}</td>
-                        <td>${u.email}</td>
-                        <td>${u.telefone || "-"}</td>
-                        <td>${u.bairro || "-"}</td>
-                        <td>
-                            <button class="editar" onclick="editar(${u.id})">Editar</button>
-                            <button class="excluir" onclick="remover(${u.id})">Excluir</button>
-                        </td>
-                    </tr>
-                `;
-            });
-        });
+function dadosUsuarios(usuarios){
+    const tabela = document.querySelector("#usuariosTabela");
+    tabela.innerHTML = "";
+
+    usuarios.forEach(u => {
+        tabela.innerHTML += `
+            <tr>
+                <td>${u.id}</td>
+                <td>${u.nome}</td>
+                <td>${u.email}</td>
+                <td>${u.telefone || "-"}</td>
+                <td>${u.bairro || "-"}</td>
+                <td>
+                    <button class="editar" onclick="editar(${u.id})">Editar</button>
+                    <button class="excluir" onclick="remover(${u.id})">Excluir</button>
+                </td>
+            </tr>
+        `;
+    });
+}
+
+function carregarUsuarios() {
+    fetch(API).then(retornaDados).then(dadosUsuarios).catch('Opa deu um erro aqui : '+ erro);
 }
 
 
