@@ -24,7 +24,7 @@ let dadosProdutos = [
                 description: "Serviço de conserto e ajuste de roupas. Barrado de calças, ajuste de blusas, conserto de zíperes e muito mais.",
                 price: "A partir de R$ 15,00",
                 contact: "(11) 97777-6666",
-                image: "https://images.unsplash.com/photo-1506629905877-52a5ca6d63b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNld2luZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                image: "assets/images/conserto-de-roupas.jpg"
             },
             {
                 id: 4,
@@ -42,7 +42,7 @@ let dadosProdutos = [
                 description: "Bonecas de pano feitas à mão com detalhes cuidadosamente costurados. Perfeitas para presentear crianças.",
                 price: "R$ 65,00",
                 contact: "@bonecas.artesanais (Instagram)",
-                image: "https://images.unsplash.com/photo-1530651788726-1c463a092d5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZG9sbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                image: "assets/images/boneca.jpg"
             },
             {
                 id: 6,
@@ -52,8 +52,11 @@ let dadosProdutos = [
                 price: "R$ 0,90 (unidade) - mínimo 50 unidades",
                 contact: "(11) 95555-4444 (WhatsApp)",
                 image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c25hY2tzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
-            }
+            },
         ];
+
+
+      
 
 let gridProdutos = window.document.getElementById('grid-produtos');
 
@@ -68,13 +71,13 @@ for(let produto of dadosProdutos ){
     novaDiv.setAttribute("id","card-produto");
     novaDiv.innerHTML = `<img src=${produto.image}
             alt="imagem de ${produto.name}, ${produto.description}">
-        <div> ${produto.category} </div>
+        <div class="categoria"> ${produto.category} </div>
 
         <h4> ${produto.name} </h4>
         <p> ${produto.description}</p>
 
-        <div> ${produto.price} </div>
-        <div>
+        <div class="price"> ${produto.price} </div>
+        <div class="compartilhar-detalhes">
             <a href="#">
                 <i class="fas fa-share-alt"></i>
                 Compartilhar

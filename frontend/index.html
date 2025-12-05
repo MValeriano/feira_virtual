@@ -14,16 +14,19 @@
 
 <body>
     <header>
-        <h1>
-            <i class="fas fa-store"></i>
-            Feirinha Virtual
-        </h1>
-
         <nav>
-            <a href="#produtos">Produtos</a>
-            <a href="#cadastro">Adicionar Produto</a>
-            <a href="#">Sobre</a>
-            <a href="#">Entrar</a>
+            <div>
+                <h1>
+                    <i class="fas fa-store"></i>
+                    Feirinha Virtual
+                </h1>
+            </div>
+            <div>
+                <a href="#produtos">Produtos</a>
+                <a href="#cadastro">Adicionar Produto</a>
+                <a href="#">Sobre</a>
+                <a href="#">Entrar</a>
+            </div>
         </nav>
     </header>
 
@@ -43,15 +46,19 @@
             <h3> Nossos Talentos </h3>
             <p>Conheça os produtos e serviços oferecidos por mulheres
                 da nossa comunidade</p>
-            <input type="text" placeholder="Buscar produtos ou serviços...">
-            <button>Todos</button>
-            <button>Artesanato</button>
-            <button>Culinária</button>
-            <button>Costura</button>
-            <button>Serviços</button>
-            <!-- 
-                https://dontpad.com/prodabel/estilo 
-            -->
+            <div class="pesquisa-container">
+                <input type="text" placeholder="Buscar produtos ou serviços...">
+                <button>
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="filtros-container">
+                <button>Todos</button>
+                <button>Artesanato</button>
+                <button>Culinária</button>
+                <button>Costura</button>
+                <button>Serviços</button>
+            </div>
             <div id="grid-produtos">
 
             </div>
@@ -59,73 +66,84 @@
         </section>
 
         <section id="cadastro">
-            <div>
-                <h2>Divulgue seu Talento</h2>
-                <p>Cadastre seu produto ou serviço para aparecer em nossa feirinha virtual</p>
-            </div>
-            
-            <div>
-                <div>
-                    <label for="product-name">Nome do Produto/Serviço *</label>
-                    <input type="text" id="product-name" placeholder="Ex: Bolsas artesanais em crochê">
+            <div class="container">
+                <!-- Cabeçalho -->
+                <div class="form-header">
+                    <h2>Divulgue seu Talento</h2>
+                    <p>Cadastre seu produto ou serviço para aparecer em nossa feirinha virtual</p>
                 </div>
                 
-                <div>
-                    <label for="product-category">Categoria *</label>
-                    <select id="product-category">
-                        <option value="">Selecione uma categoria</option>
-                        <option value="artesanato">Artesanato</option>
-                        <option value="culinaria">Culinária</option>
-                        <option value="costura">Costura</option>
-                        <option value="servicos">Serviços</option>
-                        <option value="outros">Outros</option>
-                    </select>
+                <!-- Formulário -->
+                <div class="form-container">
+                    <!-- Grupo 1: Nome -->
+                    <div class="form-group">
+                        <label for="product-name">Nome do Produto/Serviço *</label>
+                        <input type="text" id="product-name" class="form-control" placeholder="Ex: Bolsas artesanais em crochê">
+                    </div>
+                    
+                    <!-- Grupo 2: Categoria -->
+                    <div class="form-group">
+                        <label for="product-category">Categoria *</label>
+                        <select id="product-category" class="form-control">
+                            <option value="">Selecione uma categoria</option>
+                            <option value="artesanato">Artesanato</option>
+                            <option value="culinaria">Culinária</option>
+                            <option value="costura">Costura</option>
+                            <option value="servicos">Serviços</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Grupo 3: Descrição -->
+                    <div class="form-group">
+                        <label for="product-description">Descrição *</label>
+                        <textarea id="product-description" class="form-control" placeholder="Descreva seu produto ou serviço..."></textarea>
+                    </div>
+                    
+                    <!-- Grupo 4: Preço -->
+                    <div class="form-group">
+                        <label for="product-price">Preço (opcional)</label>
+                        <input type="text" id="product-price" class="form-control" placeholder="Ex: R$ 50,00 ou A combinar">
+                    </div>
+                    
+                    <!-- Grupo 5: Contato -->
+                    <div class="form-group">
+                        <label for="product-contact">Contato *</label>
+                        <input type="text" id="product-contact" class="form-control" placeholder="WhatsApp, Instagram, telefone...">
+                    </div>
+                    
+                    <!-- Grupo 6: Imagem -->
+                    <div class="form-group">
+                        <label for="product-image">Imagem (URL)</label>
+                        <input type="text" id="product-image" class="form-control" placeholder="Cole o link de uma imagem do seu produto">
+                        <small>Ou deixe em branco para usar uma imagem padrão</small>
+                    </div>
+                    
+                    <!-- Botão -->
+                    <button class="btn-submit">Cadastrar Produto</button>
                 </div>
-                
-                <div>
-                    <label for="product-description">Descrição *</label>
-                    <textarea id="product-description" placeholder="Descreva seu produto ou serviço..."></textarea>
-                </div>
-                
-                <div>
-                    <label for="product-price">Preço (opcional)</label>
-                    <input type="text" id="product-price" placeholder="Ex: R$ 50,00 ou A combinar">
-                </div>
-                
-                <div>
-                    <label for="product-contact">Contato *</label>
-                    <input type="text" id="product-contact" placeholder="WhatsApp, Instagram, telefone...">
-                </div>
-                
-                <div>
-                    <label for="product-image">Imagem (URL)</label>
-                    <input type="text" id="product-image" placeholder="Cole o link de uma imagem do seu produto">
-                    <small>Ou deixe em branco para usar uma imagem padrão</small>
-                </div>
-                
-                <button>Cadastrar Produto</button>
             </div>
         </section>
     </main>
 
     <footer>
-            <div>
-                <div>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Coluna 1 -->
+                <div class="footer-column">
                     <h3>Feirinha Virtual</h3>
-                    <p>
-                        Conectando talentos femininos da comunidade com pessoas que valorizam produtos e 
-                        serviços artesanais.
-                    </p>
-                    <div>
+                    <p>Conectando talentos femininos da comunidade...</p>
+                    <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 
-                <div>
+                <!-- Coluna 2 -->
+                <div class="footer-column">
                     <h3>Links Rápidos</h3>
-                    <ul>
+                    <ul class="footer-links">
                         <li><a href="#produtos">Ver Produtos</a></li>
                         <li><a href="#adicionar">Divulgar Talento</a></li>
                         <li><a href="#sobre">Sobre o Projeto</a></li>
@@ -133,9 +151,10 @@
                     </ul>
                 </div>
                 
-                <div>
+                <!-- Coluna 3 -->
+                <div class="footer-column">
                     <h3>Categorias</h3>
-                    <ul>
+                    <ul class="footer-links">
                         <li><a href="#">Artesanato</a></li>
                         <li><a href="#">Culinária</a></li>
                         <li><a href="#">Costura</a></li>
@@ -144,22 +163,25 @@
                 </div>
             </div>
             
-            <div>
+            <div class="copyright">
                 <p>&copy; 2025 Feirinha Virtual - Todos os direitos reservados</p>
             </div>
+        </div>
     </footer>
 
-    <div>
-        <div>
-            <button>&times;</button>
-            <img src="" alt="Produto">
-            <h2>Nome do Produto</h2>
-            <p><strong>Categoria:</strong> <span>Artesanato</span></p>
-            <p><strong>Descrição:</strong> <span>Descrição detalhada do produto.</span></p>
-            <p><strong>Preço:</strong> <span>R$ 50,00</span></p>
-            <p><strong>Contato:</strong> <span>(11) 99999-9999</span></p>
-            <div>
-                <button>Entrar em Contato</button>
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <img src="" alt="Produto" class="modal-image">
+            <h2 class="modal-title">Nome do Produto</h2>
+            
+            <p><strong>Categoria:</strong> <span class="modal-category">Artesanato</span></p>
+            <p><strong>Descrição:</strong> <span class="modal-description">Descrição detalhada do produto.</span></p>
+            <p><strong>Preço:</strong> <span class="modal-price">R$ 50,00</span></p>
+            <p><strong>Contato:</strong> <span class="modal-contact">(11) 99999-9999</span></p>
+            
+            <div class="modal-actions">
+                <button class="btn-contact">Entrar em Contato</button>
             </div>
         </div>
     </div>
